@@ -163,7 +163,7 @@ const Landing = () => {
             </motion.div>
           </div>
 
-          <div className="flex-1 w-full max-w-[500px] relative">
+          <div className="flex-1 w-full max-w-[500px] relative lg:translate-y-[60px]">
             <WorkflowAnimation />
           </div>
         </div>

@@ -160,9 +160,10 @@ const Landing = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              className="font-heading text-6xl md:text-9xl mb-10 tracking-tighter text-[#2d3748] text-glow-sage leading-[0.9]"
+              className="font-heading text-[38px] md:text-[60px] lg:text-[82px] mb-10 tracking-[0.02em] text-[#2F3A4A] leading-[1.15]"
             >
-              Be Understood,<br />Not Judged
+              <span className="font-medium opacity-80">Be Understood,</span><br />
+              <span className="font-semibold text-[#1a202c]">Not Judged</span>
             </motion.h1>
 
             <motion.p 

@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useUserStore();
   const [localState, setLocalState] = useState({
-    email: "", password: ""
+    alias: "", password: ""
   });
 
   const handleLogin = (e) => {
@@ -47,12 +47,12 @@ const Login = () => {
         <form onSubmit={handleLogin} className="space-y-8 glass p-12 rounded-[50px] border-white/60 shadow-2xl relative">
           <div className="space-y-8">
             <PrivacyField 
-              label="Email Address" 
-              type="email"
+              label="Alias" 
+              type="text"
               delay={0.1}
-              value={localState.email} 
-              placeholder="you@example.com"
-              onChange={e => setLocalState({...localState, email: e.target.value})} 
+              value={localState.alias} 
+              placeholder="Your unique alias"
+              onChange={e => setLocalState({...localState, alias: e.target.value})} 
             />
             
             <PrivacyField 
@@ -73,7 +73,7 @@ const Login = () => {
           >
             <button 
               type="submit"
-              disabled={!localState.email || !localState.password}
+              disabled={!localState.alias || !localState.password}
               className="w-full py-6 bg-[#2d3748] text-white rounded-[32px] font-body font-bold hover:bg-[#1a202c] transition-all duration-700 disabled:opacity-20 flex justify-center items-center gap-2 group shadow-2xl shadow-indigo-900/10"
             >
               Sign In

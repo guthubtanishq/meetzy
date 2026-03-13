@@ -90,10 +90,10 @@ const Landing = () => {
         >
           {!isAuthenticated ? (
             <button 
-              onClick={() => navigate('/signup')}
+              onClick={() => navigate('/login')}
               className="px-8 py-4 bg-white/40 backdrop-blur-md border border-white/60 rounded-full text-[11px] font-bold uppercase tracking-[0.3em] text-[#2d3748] hover:bg-white/80 transition-all shadow-lg"
             >
-              Sign Up
+              Log In
             </button>
           ) : (
             <button 

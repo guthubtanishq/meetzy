@@ -54,7 +54,7 @@ const Profile = () => {
             </div>
             
             <div className="mt-12 pt-12 border-t border-[#2d3748]/5">
-                <h4 className="font-heading text-xl mb-4 text-[#2d3748]/80">Interaction Mode</h4>
+                <h4 className="font-heading text-xl mb-4 text-[#2d3748]/80">Interaction Preference</h4>
                 <div className="inline-block px-10 py-4 rounded-3xl bg-sage/10 border border-sage/20 text-sage font-body font-bold shadow-lg shadow-sage/10 capitalize">
                 {supportPreference}
                 </div>

@@ -22,7 +22,7 @@ const Nav = () => {
           to="/match" 
           className={`font-body text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/match' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
         >
-          Orbit
+          Matching
         </Link>
         <Link 
           to="/journal" 

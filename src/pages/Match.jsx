@@ -130,16 +130,12 @@ const Match = () => {
             <div className="absolute inset-0 bg-mesh-soft opacity-30 z-0 pointer-events-none" />
             
             <header className="text-center mb-16 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="inline-block font-accent text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
-                >
-                    Soul Alignment
-                </motion.div>
                 <h1 className="font-heading text-5xl md:text-6xl text-[#2d3748] tracking-tight">
-                    People who truly <br />understand
+                    People Who Might Understand You
                 </h1>
+                <p className="font-body text-md md:text-xl text-text-muted max-w-2xl mx-auto mt-6">
+                    Based on your shared experiences and temperament.
+                </p>
             </header>
 
             {/* Card Stack */}
@@ -265,7 +261,7 @@ const Match = () => {
             </AnimatePresence>
 
             <footer className="mt-auto pt-16 font-accent text-[8px] uppercase tracking-[0.4em] text-text-muted/30 relative z-10 pointer-events-none">
-                Safety First · No Judgment · Peer Support
+                Safe Space · Decentralized · Private
             </footer>
         </div>
     );

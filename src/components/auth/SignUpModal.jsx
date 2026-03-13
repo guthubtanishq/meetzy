@@ -45,7 +45,7 @@ const SignUpModal = ({ isOpen, onClose, onComplete }) => {
 
           <div className="relative z-10">
             <div className="text-center mb-10">
-              <h2 className="font-heading text-4xl text-[#2d3748] mb-4">Peaceful Entry</h2>
+              <h2 className="font-heading text-4xl text-[#2d3748] mb-4">Private Registration</h2>
               <p className="font-body text-text-muted text-sm max-w-xs mx-auto">
                 Tell us about you — this stays private forever.
               </p>
@@ -92,7 +92,7 @@ const SignUpModal = ({ isOpen, onClose, onComplete }) => {
               />
               
               <PrivacyField 
-                label="Password" 
+                label="Secure Password" 
                 type="password"
                 value={localState.password} 
                 placeholder="••••••••"
@@ -104,7 +104,7 @@ const SignUpModal = ({ isOpen, onClose, onComplete }) => {
                 disabled={!localState.realName || !localState.email || !localState.password}
                 className="w-full py-5 bg-[#2d3748] text-white rounded-[30px] font-body font-bold hover:bg-black transition-all shadow-xl disabled:opacity-20 mt-4"
               >
-                Continue to Meetzy
+                Continue
               </button>
             </form>
           </div>

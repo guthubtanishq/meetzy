@@ -69,7 +69,7 @@ const IdentityReveal = () => {
               exit={{ opacity: 0 }}
               className="text-sage font-accent text-[10px] tracking-[0.5em] uppercase animate-pulse"
             >
-              Listening to your thoughts...
+              Generating Mind-Signature...
             </motion.div>
           ) : (
             <motion.div
@@ -79,7 +79,7 @@ const IdentityReveal = () => {
               className="flex flex-col items-center text-center"
             >
               <p className="font-body text-text-muted text-[10px] mb-8 uppercase tracking-[0.4em] font-semibold">
-                Your Meetzy identity has been revealed
+                Your Meetzy identity has been created
               </p>
               
               <div className="relative py-12 px-24">
@@ -97,8 +97,8 @@ const IdentityReveal = () => {
                 className="mt-16 flex flex-col items-center gap-10"
               >
                 <p className="text-text-muted font-body text-sm max-w-xs leading-relaxed italic">
-                  "This is the name you’ll use in our safe space. <br />
-                  No one will ever know the real you."
+                  This is you on Meetzy. <br />
+                  No one will ever know your real name.
                 </p>
 
                 <div className="flex flex-col gap-6">
@@ -112,7 +112,7 @@ const IdentityReveal = () => {
                     onClick={handleRegenerate}
                     className="text-[10px] font-accent text-text-muted hover:text-text-main uppercase tracking-[0.3em] font-semibold transition-colors"
                   >
-                    Regenerate Identity
+                    Regenerate Name
                   </button>
                 </div>
               </motion.div>

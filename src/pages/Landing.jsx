@@ -153,7 +153,7 @@ const Landing = () => {
               transition={{ duration: 0.8 }}
               className="mb-8 inline-block font-accent text-[10px] uppercase tracking-[0.6em] text-sage font-bold py-2 border-b border-sage/10"
             >
-                A Safe Place To Connect
+                A Place of Empathy
             </motion.div>
 
             <motion.h1 
@@ -171,7 +171,8 @@ const Landing = () => {
               transition={{ delay: 0.6, duration: 1.2 }}
               className="font-body text-md md:text-xl text-text-muted max-w-2xl mb-14 leading-relaxed font-light"
             >
-              Meet people who truly understand your experiences. No profile pictures. No real names. Just genuine conversations built on empathy.
+              A personality-safe connection platform focusing on empathy, 
+              psychological compatibility, and shared experience.
             </motion.p>
 
             <motion.div 
@@ -185,12 +186,12 @@ const Landing = () => {
                   className="group relative px-20 py-7 bg-[#2d3748] text-white rounded-full font-body font-bold text-sm tracking-widest overflow-hidden hover:scale-105 transition-all duration-700 shadow-3xl shadow-indigo-900/30"
                 >
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
-                    <span className="relative z-10">Get Started</span>
+                    <span className="relative z-10">Create Account</span>
                 </button>
 
                 <div className="flex flex-col items-center gap-3">
                    <p className="font-accent text-[9px] uppercase tracking-[0.5em] text-text-muted/40 font-bold">
-                      No profile pictures • No real names • No popularity metrics
+                      No Profile Pictures · No Real Names · No Validation Metrics
                    </p>
                 </div>
             </motion.div>

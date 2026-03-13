@@ -18,9 +18,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([
     { 
       id: 1, 
-      text: botProfile 
-        ? `Hello. I resonance with your energy. How are you feeling today?` 
-        : "Hello. I also struggle with overthinking. How are you feeling today?", 
+      text: "Hello. I see we match based on similar experiences.", 
       sender: "other", 
       time: "Just now" 
     }
@@ -80,9 +78,9 @@ const Chat = () => {
           </button>
           <div>
             <h1 className="font-heading text-xl text-[#2d3748] tracking-widest font-bold uppercase">{id}</h1>
-            <div className="flex items-center gap-2 text-[9px] font-accent text-sage uppercase tracking-widest mt-1 font-bold">
-              <span className={`w-2 h-2 rounded-full ${isTyping ? 'bg-sage animate-ping' : 'bg-sage animate-pulse'}`} />
-              {isTyping ? "Attuning to your energy..." : "Secure Mind-Link"}
+            <div className="flex items-center gap-2 text-[9px] font-accent text-text-muted/40 uppercase tracking-widest mt-1 font-bold">
+              <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
+              Connected Moments Ago
             </div>
           </div>
         </div>
@@ -94,9 +92,8 @@ const Chat = () => {
       {/* Shared Space Placeholder */}
       <div className="px-10 py-6 bg-sage/5 border-b border-sage/10 relative z-10 overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 bg-white/20 blur-[60px]" />
-            <p className="font-body text-[10px] text-sage font-bold tracking-[0.2em] relative z-10 flex items-center gap-3">
-                <MessageSquare size={12} />
-                SHARED INTENTION: {botProfile ? "RESONANCE & EMPATHY" : "LISTENING & HOLDING SPACE"}
+            <p className="font-body text-[10px] text-sage font-bold tracking-[0.2em] relative z-10 flex items-center gap-3 uppercase">
+                Encryption active. Safety first.
             </p>
       </div>
 
@@ -148,7 +145,7 @@ const Chat = () => {
             value={input}
             onChange={e => setInput(e.target.value)}
             disabled={isTyping}
-            placeholder={isTyping ? "Awaiting resonance..." : "Share your thoughts safely..."}
+            placeholder={isTyping ? "Attuning..." : "Focus on the mind, not the mask..."}
             className="w-full bg-white border border-white/80 rounded-[40px] px-12 py-6 font-body text-sm text-text-main focus:outline-none focus:border-sage/40 transition-all shadow-3xl shadow-indigo-100/40 placeholder:text-text-muted/20 disabled:opacity-50"
           />
           <button 

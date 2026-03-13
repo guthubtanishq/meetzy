@@ -79,7 +79,7 @@ const Onboarding = () => {
                             className="flex flex-col items-center"
                         >
                             <h2 className="font-heading text-4xl mb-3 text-[#2d3748]">How your mind works</h2>
-                            <p className="text-text-muted text-sm mb-16 max-w-xs text-center leading-relaxed">Select traits that describe your current inner space.</p>
+                            <p className="text-text-muted text-sm mb-16 max-w-xs text-center leading-relaxed">Select traits that describe your experience.</p>
 
                             <div className="flex flex-wrap gap-4 justify-center mb-16 max-w-3xl">
                                 {traits.map(t => (
@@ -114,9 +114,9 @@ const Onboarding = () => {
                                     >
                                         <h4 className="font-heading text-2xl mb-3 text-[#2d3748]">{pref}</h4>
                                         <p className="text-xs text-text-muted leading-relaxed group-hover:text-[#2d3748] transition-colors">
-                                            {pref === 'Listener' && "I prefer to listen and offer a calm ear to others."}
-                                            {pref === 'Talker' && "I need space to share and feel heard today."}
-                                            {pref === 'Mixed' && "I'm open to both listening and being heard."}
+                                            {pref === 'Listener' && "I prefer to listen and support others in their journey."}
+                                            {pref === 'Talker' && "I need someone to hear me and hold space today."}
+                                            {pref === 'Mixed' && "I can do both, depending on the need of the moment."}
                                         </p>
                                     </button>
                                 ))}
@@ -169,9 +169,9 @@ const Onboarding = () => {
                             </div>
 
                             <div className="w-full space-y-3 mb-16 max-w-lg">
-                                <label className="font-body text-xs text-text-muted uppercase tracking-[0.2em] px-2 font-semibold">Note (Stay Private)</label>
+                                <label className="font-body text-xs text-text-muted uppercase tracking-[0.2em] px-2 font-semibold">Note (Optional)</label>
                                 <textarea 
-                                    placeholder="Anything else you want your match to know? (Only seen by matches)"
+                                    placeholder="Anything else you want your match to know? (stays private)"
                                     className="w-full bg-white/40 border border-white/60 rounded-[40px] p-10 font-body text-sm min-h-[180px] focus:outline-none focus:border-sage/40 focus:bg-white/80 transition-all placeholder:text-text-muted/30 shadow-sm"
                                     onChange={e => setPublicInfo({ note: e.target.value })}
                                 />
@@ -188,7 +188,7 @@ const Onboarding = () => {
                                     onClick={handleComplete}
                                     className="px-20 py-6 bg-white text-[#2d3748] border border-white/60 font-body font-bold rounded-[32px] hover:scale-105 transition-all shadow-2xl shadow-indigo-100/30"
                                 >
-                                    Generate Identity →
+                                    Generate My Identity →
                                 </button>
                             </div>
                         </motion.div>

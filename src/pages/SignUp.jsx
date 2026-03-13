@@ -36,12 +36,9 @@ const SignUp = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
         >
-          <div className="inline-block font-accent text-[9px] uppercase tracking-[0.4em] text-sage/60 py-2 border-b border-sage/10 mb-6">
-              Step 1 of 3
-          </div>
-          <h1 className="font-heading text-5xl mb-4 text-[#2d3748]">Peaceful Entry</h1>
+          <h1 className="font-heading text-5xl mb-4 text-[#2d3748]">Private Registration</h1>
           <p className="font-body text-text-muted text-sm max-w-xs mx-auto leading-relaxed">
-            Tell us about you — this stays private forever. No user will see this information.
+            Tell us about you — this stays private forever.
           </p>
         </motion.div>
 
@@ -95,7 +92,7 @@ const SignUp = () => {
             />
             
             <PrivacyField 
-              label="Password" 
+              label="Secure Password" 
               type="password"
               delay={0.25}
               value={localState.password} 
@@ -111,7 +108,8 @@ const SignUp = () => {
             className="flex flex-col items-center gap-8 pt-6"
           >
             <p className="text-[10px] font-accent text-text-muted/40 text-center leading-relaxed max-w-[280px]">
-                "Your real name will never appear to anyone on Meetzy. Ever."
+                Your real name will never appear to anyone on Meetzy. Ever. <br />
+                Encryption active.
             </p>
             
             <button 

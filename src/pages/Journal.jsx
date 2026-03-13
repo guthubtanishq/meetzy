@@ -90,14 +90,13 @@ const Journal = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             className="inline-block font-accent text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
                         >
-                            Secure Private Journal
+                            Private Journal
                         </motion.div>
                         <h1 className="font-heading text-6xl text-[#2d3748] mb-8 leading-[1.1]">
-                            Release your <br /><span className="text-sage">thoughts</span>
+                            Journal
                         </h1>
                         <p className="font-body text-text-muted text-sm max-w-sm mb-12 leading-relaxed">
-                            This is your sacred space. No algorithm, no social validation, and no judgment. 
-                            Everything you write here is stored only on your device.
+                            A private space for your thoughts. Encrypted and stored locally.
                         </p>
 
                         {!isWriting ? (
@@ -156,7 +155,7 @@ const Journal = () => {
                                         disabled={!content.trim()}
                                         className="px-16 py-5 bg-[#2d3748] text-white rounded-full font-body font-bold shadow-2xl hover:bg-black transition-all disabled:opacity-20"
                                     >
-                                        Seal Entry
+                                        Save Entry
                                     </button>
                                 </div>
                             </motion.form>
@@ -193,12 +192,6 @@ const Journal = () => {
                                     </div>
                                 )}
 
-                                <div className="pt-20 text-center">
-                                    <div className="inline-flex items-center gap-4 px-8 py-3 bg-sage/5 rounded-full border border-sage/10">
-                                        <Heart size={14} className="text-sage" />
-                                        <span className="font-accent text-[9px] uppercase tracking-widest text-sage font-bold">Thinking of you</span>
-                                    </div>
-                                </div>
                             </motion.div>
                         )}
                     </AnimatePresence>

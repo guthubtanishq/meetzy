@@ -7,32 +7,8 @@ import ParticleField from '../components/three/ParticleField';
 import MoodOrb from '../components/three/MoodOrb';
 import useUserStore from '../store/userStore';
 import SignUpModal from '../components/auth/SignUpModal';
+import WorkflowAnimation from '../components/layout/WorkflowAnimation';
 
-const SwipePreview = () => (
-  <div className="relative w-40 h-52 hidden lg:block">
-    <motion.div
-      animate={{ 
-        rotate: [0, 5, -5, 0],
-        x: [0, 10, -10, 0],
-        opacity: [1, 0.8, 1]
-      }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute inset-0 glass rounded-3xl border-white/60 p-4 shadow-xl z-20 flex flex-col gap-2"
-    >
-      <div className="w-8 h-8 rounded-full bg-sage/20 mb-2" />
-      <div className="w-12 h-2 bg-text-muted/10 rounded-full" />
-      <div className="flex-1 border-l border-sage/20 pl-2 mt-2">
-         <div className="w-full h-1 bg-sage/10 rounded-full mb-1" />
-         <div className="w-3/4 h-1 bg-sage/10 rounded-full" />
-      </div>
-      <div className="flex justify-between items-center mt-auto">
-        <X size={10} className="text-rose/40" />
-        <Heart size={10} className="text-sage/40" fill="currentColor" />
-      </div>
-    </motion.div>
-    <div className="absolute inset-0 glass rounded-3xl border-white/40 scale-95 translate-y-4 -z-10 opacity-40" />
-  </div>
-);
 
 const FloatingAvatar = ({ delay = 0, x = 0, y = 0, color = "#9b8ec4" }) => (
   <motion.div
@@ -132,13 +108,10 @@ const Landing = () => {
         </motion.div>
       </nav>
 
-      {/* 3. Main Hero Content */}
-      <main className="relative z-20 h-full w-full flex flex-col items-center justify-center px-6 text-center">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-32 w-full max-w-7xl mx-auto">
+      <main className="relative z-20 h-full w-full flex flex-col items-center justify-center px-6 pt-32 lg:pt-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24 w-full max-w-7xl mx-auto">
           
-          <SwipePreview />
-
-          <div className="max-w-3xl flex flex-col items-center">
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -172,7 +145,7 @@ const Landing = () => {
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 0.8, duration: 1 }}
-               className="flex flex-col items-center gap-10"
+               className="flex flex-col items-center lg:items-start gap-10"
             >
                 <button 
                   onClick={() => setShowModal(true)}
@@ -182,7 +155,7 @@ const Landing = () => {
                     <span className="relative z-10">Get Started</span>
                 </button>
 
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center lg:items-start gap-3">
                    <p className="font-accent text-[9px] uppercase tracking-[0.5em] text-text-muted/40 font-bold">
                       No Profile Pictures · No Real Names · No Validation Metrics
                    </p>
@@ -190,8 +163,8 @@ const Landing = () => {
             </motion.div>
           </div>
 
-          <div className="hidden lg:block rotate-12 scale-x-[-1] opacity-60">
-             <SwipePreview />
+          <div className="flex-1 w-full max-w-[500px] relative">
+            <WorkflowAnimation />
           </div>
         </div>
       </main>

@@ -81,7 +81,7 @@ const Login = () => {
             </button>
 
             <Link 
-              to="/signup" 
+              to="/register" 
               className="font-body text-xs text-text-muted hover:text-text-main transition-colors"
             >
               Don't have an account? <span className="font-bold text-sage">Sign up</span>

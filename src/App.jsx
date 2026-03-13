@@ -4,7 +4,7 @@ import Nav from './components/layout/Nav';
 import CustomCursor from './components/layout/CustomCursor';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Register from './pages/Register';
 import Onboarding from './pages/Onboarding';
 import IdentityReveal from './pages/IdentityReveal';
 import Match from './pages/Match';
@@ -26,7 +26,7 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/identity" element={<IdentityReveal />} />
           <Route path="/match" element={<Match />} />

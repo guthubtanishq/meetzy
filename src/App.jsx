@@ -9,6 +9,7 @@ import IdentityReveal from './pages/IdentityReveal';
 import Match from './pages/Match';
 import Chat from './pages/Chat';
 import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 import './styles/globals.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/match" element={<Match />} />
           <Route path="/chat/:id" element={<Chat />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
     </div>

@@ -4,26 +4,44 @@ import { persist } from 'zustand/middleware';
 const useUserStore = create(
   persist(
     (set) => ({
-      user: {
-        id: '',
+      // Private — never shown to others
+      realName: "",
+      age: null,
+      gender: "",
+      email: "",
+      password: "",
+
+      // Public — shown to matches
+      anonymousId: "",
+      traits: [],
+      supportPreference: "Mixed",
+      currentMood: "Calm",
+      note: "",
+      isOnboarded: false,
+
+      // Actions
+      setPrivateInfo: (data) => set((state) => ({ ...state, ...data })),
+      setPublicInfo: (data) => set((state) => ({ ...state, ...data })),
+      setTraits: (traits) => set({ traits }),
+      setAnonymousId: (id) => set({ anonymousId: id }),
+      setMood: (mood) => set({ currentMood: mood }),
+      setSupport: (pref) => set({ supportPreference: pref }),
+      reset: () => set({
+        realName: "",
+        age: null,
+        gender: "",
+        email: "",
+        password: "",
+        anonymousId: "",
         traits: [],
-        supportPreference: 'Mixed',
-        moodId: 0,
+        supportPreference: "Mixed",
+        currentMood: "Calm",
+        note: "",
         isOnboarded: false,
-      },
-      setUser: (data) => set((state) => ({ user: { ...state.user, ...data } })),
-      addTrait: (trait) => set((state) => ({ 
-        user: { ...state.user, traits: [...new Set([...state.user.traits, trait])] } 
-      })),
-      removeTrait: (trait) => set((state) => ({ 
-        user: { ...state.user, traits: state.user.traits.filter(t => t !== trait) } 
-      })),
-      resetUser: () => set({ 
-        user: { id: '', traits: [], supportPreference: 'Mixed', moodId: 0, isOnboarded: false } 
       }),
     }),
     {
-      name: 'meetzy-storage',
+      name: 'meetzy-secure-storage',
     }
   )
 );

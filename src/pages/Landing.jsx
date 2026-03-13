@@ -44,15 +44,16 @@ const Landing = () => {
           className="flex flex-col md:flex-row gap-4"
         >
           <button 
-            onClick={() => navigate('/onboarding')}
-            className="px-12 py-4 bg-bg-surface border border-white/10 rounded-full font-ui font-semibold hover:border-sage hover:bg-white/5 transition-all duration-500 hover:-translate-y-1 shadow-2xl shadow-black/50"
+            onClick={() => navigate('/signup')}
+            className="px-12 py-4 bg-white text-bg-base border border-white/10 rounded-full font-ui font-bold hover:scale-105 transition-all duration-500 shadow-2xl shadow-sage/20"
           >
-            Enter Space
+            Create Account
           </button>
           <button 
-            className="px-12 py-4 border border-white/5 rounded-full font-ui text-white/40 hover:text-white transition-colors"
+            onClick={() => navigate('/signup')}
+            className="px-12 py-4 border border-white/5 rounded-full font-ui text-white/40 hover:text-white hover:border-white/10 transition-all font-semibold"
           >
-            Mission Statement
+            Sign In
           </button>
         </motion.div>
       </div>

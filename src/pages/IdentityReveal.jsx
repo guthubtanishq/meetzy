@@ -67,7 +67,7 @@ const IdentityReveal = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="text-sage font-mono text-[10px] tracking-[0.5em] uppercase animate-pulse"
+              className="text-sage font-accent text-[10px] tracking-[0.5em] uppercase animate-pulse"
             >
               Listening to your thoughts...
             </motion.div>
@@ -78,13 +78,13 @@ const IdentityReveal = () => {
               animate={{ opacity: 1 }}
               className="flex flex-col items-center text-center"
             >
-              <p className="font-ui text-text-muted text-[10px] mb-8 uppercase tracking-[0.4em] font-semibold">
+              <p className="font-body text-text-muted text-[10px] mb-8 uppercase tracking-[0.4em] font-semibold">
                 Your Meetzy identity has been revealed
               </p>
               
               <div className="relative py-12 px-24">
                 <div className="absolute inset-x-0 inset-y-0 bg-sage/5 rounded-full blur-[100px] opacity-10 animate-pulse" />
-                <h1 className="font-mono text-6xl md:text-8xl text-sage relative z-10 transition-all duration-1000 text-glow-sage">
+                <h1 className="font-heading text-6xl md:text-8xl text-sage relative z-10 transition-all duration-1000 text-glow-sage uppercase tracking-tighter">
                   {displayText}
                   <span className="w-1.5 h-12 md:h-16 bg-sage/20 ml-2 inline-block animate-pulse align-middle" />
                 </h1>
@@ -96,7 +96,7 @@ const IdentityReveal = () => {
                 transition={{ delay: 1.2, duration: 1 }}
                 className="mt-16 flex flex-col items-center gap-10"
               >
-                <p className="text-text-muted font-ui text-sm max-w-xs leading-relaxed italic">
+                <p className="text-text-muted font-body text-sm max-w-xs leading-relaxed italic">
                   "This is the name you’ll use in our safe space. <br />
                   No one will ever know the real you."
                 </p>
@@ -104,13 +104,13 @@ const IdentityReveal = () => {
                 <div className="flex flex-col gap-6">
                   <button
                     onClick={handleEnter}
-                    className="px-24 py-6 bg-[#2d3748] text-white font-ui font-bold rounded-[32px] hover:scale-105 transition-all shadow-2xl shadow-indigo-900/10"
+                    className="px-24 py-6 bg-[#2d3748] text-white font-body font-bold rounded-[32px] hover:scale-105 transition-all shadow-2xl shadow-indigo-900/10"
                   >
                     Enter Meetzy →
                   </button>
                   <button
                     onClick={handleRegenerate}
-                    className="text-[10px] font-mono text-text-muted hover:text-text-main uppercase tracking-[0.3em] font-semibold transition-colors"
+                    className="text-[10px] font-accent text-text-muted hover:text-text-main uppercase tracking-[0.3em] font-semibold transition-colors"
                   >
                     Regenerate Identity
                   </button>

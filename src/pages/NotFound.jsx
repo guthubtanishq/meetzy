@@ -28,7 +28,7 @@ const NotFound = () => {
                     <h1 className="font-heading text-9xl text-sage/10 relative">
                         404
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="font-mono text-xl tracking-[0.5em] text-[#2d3748]/40 uppercase font-bold">Lost In Mist</span>
+                            <span className="font-accent text-xl tracking-[0.5em] text-[#2d3748]/40 uppercase font-bold">Lost In Mist</span>
                         </div>
                     </h1>
                 </motion.div>
@@ -37,7 +37,7 @@ const NotFound = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="font-ui text-text-muted text-sm max-w-xs mx-auto mb-16 leading-relaxed"
+                    className="font-body text-text-muted text-sm max-w-xs mx-auto mb-16 leading-relaxed"
                 >
                     The thoughts you're looking for have drifted beyond the current orbit. Let's redirect back to the peaceful center.
                 </motion.p>
@@ -47,7 +47,7 @@ const NotFound = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                     onClick={() => navigate('/')}
-                    className="px-16 py-6 bg-[#2d3748] text-white border border-[#2d3748]/10 rounded-full font-ui font-bold hover:scale-105 transition-all duration-700 shadow-2xl shadow-indigo-900/10"
+                    className="px-16 py-6 bg-[#2d3748] text-white border border-[#2d3748]/10 rounded-full font-body font-bold hover:scale-105 transition-all duration-700 shadow-2xl shadow-indigo-900/10"
                 >
                     Return to Center
                 </motion.button>

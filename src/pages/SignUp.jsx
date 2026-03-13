@@ -36,11 +36,11 @@ const SignUp = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
         >
-          <div className="inline-block font-mono text-[9px] uppercase tracking-[0.4em] text-sage/60 py-2 border-b border-sage/10 mb-6">
+          <div className="inline-block font-accent text-[9px] uppercase tracking-[0.4em] text-sage/60 py-2 border-b border-sage/10 mb-6">
               Step 1 of 3
           </div>
           <h1 className="font-heading text-5xl mb-4 text-[#2d3748]">Peaceful Entry</h1>
-          <p className="font-ui text-text-muted text-sm max-w-xs mx-auto leading-relaxed">
+          <p className="font-body text-text-muted text-sm max-w-xs mx-auto leading-relaxed">
             Tell us about you — this stays private forever. No user will see this information.
           </p>
         </motion.div>
@@ -65,10 +65,10 @@ const SignUp = () => {
                 onChange={e => setLocalState({...localState, age: e.target.value})} 
               />
               <div className="space-y-3">
-                <label className="font-ui text-xs text-text-muted uppercase tracking-[0.15em] px-2">Gender</label>
+                <label className="font-body text-xs text-text-muted uppercase tracking-[0.15em] px-2">Gender</label>
                 <div className="relative">
                     <select 
-                        className="w-full bg-white/40 border border-white/60 rounded-3xl px-8 py-5 font-ui text-sm text-[#2d3748] focus:outline-none focus:border-sage/40 appearance-none cursor-pointer hover:bg-white/80 transition-all shadow-sm"
+                        className="w-full bg-white/40 border border-white/60 rounded-3xl px-8 py-5 font-body text-sm text-[#2d3748] focus:outline-none focus:border-sage/40 appearance-none cursor-pointer hover:bg-white/80 transition-all shadow-sm"
                         value={localState.gender}
                         onChange={e => setLocalState({...localState, gender: e.target.value})}
                     >
@@ -110,14 +110,14 @@ const SignUp = () => {
             transition={{ delay: 0.6 }}
             className="flex flex-col items-center gap-8 pt-6"
           >
-            <p className="text-[10px] font-mono text-text-muted/40 text-center leading-relaxed max-w-[280px]">
+            <p className="text-[10px] font-accent text-text-muted/40 text-center leading-relaxed max-w-[280px]">
                 "Your real name will never appear to anyone on Meetzy. Ever."
             </p>
             
             <button 
               type="submit"
               disabled={!localState.realName || !localState.email || !localState.password}
-              className="w-full py-6 bg-[#2d3748] text-white rounded-[32px] font-ui font-bold hover:bg-[#1a202c] transition-all duration-700 disabled:opacity-20 flex justify-center items-center gap-2 group shadow-2xl shadow-indigo-900/10"
+              className="w-full py-6 bg-[#2d3748] text-white rounded-[32px] font-body font-bold hover:bg-[#1a202c] transition-all duration-700 disabled:opacity-20 flex justify-center items-center gap-2 group shadow-2xl shadow-indigo-900/10"
             >
               Continue 
               <span className="group-hover:translate-x-1 transition-transform">→</span>

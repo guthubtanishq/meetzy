@@ -87,7 +87,7 @@ const Onboarding = () => {
                                         key={t.name}
                                         whileTap={{ scale: 0.95 }}
                                         onClick={() => toggleTrait(t.name)}
-                                        className={`px-10 py-4 rounded-3xl border text-sm font-ui transition-all duration-700 ${
+                                        className={`px-10 py-4 rounded-3xl border text-sm font-body transition-all duration-700 ${
                                             userTraits.includes(t.name) 
                                                 ? 'bg-sage/15 border-sage/30 text-sage font-bold shadow-xl shadow-sage/5' 
                                                 : 'bg-white/40 border-white/60 text-text-muted hover:border-text-muted/20 hover:bg-white/80'
@@ -125,7 +125,7 @@ const Onboarding = () => {
                             <button 
                                 onClick={() => setStep(1)}
                                 disabled={userTraits.length === 0}
-                                className="px-20 py-6 bg-[#2d3748] text-white rounded-[32px] font-ui font-bold hover:bg-[#1a202c] transition-all duration-700 disabled:opacity-20 shadow-2xl shadow-indigo-900/10"
+                                className="px-20 py-6 bg-[#2d3748] text-white rounded-[32px] font-body font-bold hover:bg-[#1a202c] transition-all duration-700 disabled:opacity-20 shadow-2xl shadow-indigo-900/10"
                             >
                                 Continue →
                             </button>
@@ -161,7 +161,7 @@ const Onboarding = () => {
                                                 />
                                             </svg>
                                         </div>
-                                        <span className={`font-mono text-[10px] uppercase tracking-widest transition-opacity ${currentMood === m.id ? 'opacity-100 text-[#2d3748] font-bold' : 'opacity-20 group-hover:opacity-100'}`}>
+                                        <span className={`font-accent text-[10px] uppercase tracking-widest transition-opacity ${currentMood === m.id ? 'opacity-100 text-[#2d3748] font-bold' : 'opacity-20 group-hover:opacity-100'}`}>
                                             {m.id}
                                         </span>
                                     </button>
@@ -169,10 +169,10 @@ const Onboarding = () => {
                             </div>
 
                             <div className="w-full space-y-3 mb-16 max-w-lg">
-                                <label className="font-ui text-xs text-text-muted uppercase tracking-[0.2em] px-2 font-semibold">Note (Stay Private)</label>
+                                <label className="font-body text-xs text-text-muted uppercase tracking-[0.2em] px-2 font-semibold">Note (Stay Private)</label>
                                 <textarea 
                                     placeholder="Anything else you want your match to know? (Only seen by matches)"
-                                    className="w-full bg-white/40 border border-white/60 rounded-[40px] p-10 font-ui text-sm min-h-[180px] focus:outline-none focus:border-sage/40 focus:bg-white/80 transition-all placeholder:text-text-muted/30 shadow-sm"
+                                    className="w-full bg-white/40 border border-white/60 rounded-[40px] p-10 font-body text-sm min-h-[180px] focus:outline-none focus:border-sage/40 focus:bg-white/80 transition-all placeholder:text-text-muted/30 shadow-sm"
                                     onChange={e => setPublicInfo({ note: e.target.value })}
                                 />
                             </div>
@@ -180,13 +180,13 @@ const Onboarding = () => {
                             <div className="flex gap-6">
                                 <button 
                                     onClick={() => setStep(0)}
-                                    className="px-14 py-6 border border-[#2d3748]/10 rounded-full font-ui text-text-muted/50 hover:text-text-main transition-all"
+                                    className="px-14 py-6 border border-[#2d3748]/10 rounded-full font-body text-text-muted/50 hover:text-text-main transition-all"
                                 >
                                     Back
                                 </button>
                                 <button 
                                     onClick={handleComplete}
-                                    className="px-20 py-6 bg-white text-[#2d3748] border border-white/60 font-ui font-bold rounded-[32px] hover:scale-105 transition-all shadow-2xl shadow-indigo-100/30"
+                                    className="px-20 py-6 bg-white text-[#2d3748] border border-white/60 font-body font-bold rounded-[32px] hover:scale-105 transition-all shadow-2xl shadow-indigo-100/30"
                                 >
                                     Generate Identity →
                                 </button>

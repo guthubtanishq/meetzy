@@ -19,7 +19,7 @@ const Matches = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="inline-block font-mono text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
+                            className="inline-block font-accent text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
                         >
                             Mutual Understandings
                         </motion.div>
@@ -36,7 +36,7 @@ const Matches = () => {
                         <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-text-muted/30 group-focus-within:text-sage transition-colors" size={18} />
                         <input 
                             placeholder="Find a soul..."
-                            className="w-full bg-white/40 border border-white/60 rounded-full pl-16 pr-8 py-4 font-ui text-sm focus:outline-none focus:border-sage/40 transition-all placeholder:text-text-muted/20 shadow-sm"
+                            className="w-full bg-white/40 border border-white/60 rounded-full pl-16 pr-8 py-4 font-body text-sm focus:outline-none focus:border-sage/40 transition-all placeholder:text-text-muted/20 shadow-sm"
                         />
                     </div>
                 </header>
@@ -56,10 +56,10 @@ const Matches = () => {
                                 >
                                     <div className="flex justify-between items-start mb-10">
                                         <div className="flex flex-col gap-2">
-                                            <span className="font-mono text-[10px] tracking-[0.2em] text-sage font-bold uppercase py-2 px-4 bg-sage/5 rounded-xl self-start">
+                                            <span className="font-accent text-[10px] tracking-[0.2em] text-sage font-bold uppercase py-2 px-4 bg-sage/5 rounded-xl self-start">
                                                 {profile.id}
                                             </span>
-                                            <div className="flex items-center gap-2 text-[8px] font-mono text-sage/60 uppercase tracking-widest mt-2">
+                                            <div className="flex items-center gap-2 text-[8px] font-accent text-sage/60 uppercase tracking-widest mt-2">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
                                                 Active Connection
                                             </div>
@@ -74,21 +74,21 @@ const Matches = () => {
 
                                     <div className="flex flex-wrap gap-2 mb-10">
                                         {profile.traits.slice(0, 3).map(trait => (
-                                            <span key={trait} className="px-4 py-2 bg-text-muted/5 rounded-2xl text-[9px] font-mono text-text-muted font-bold uppercase tracking-widest">
+                                            <span key={trait} className="px-4 py-2 bg-text-muted/5 rounded-2xl text-[9px] font-accent text-text-muted font-bold uppercase tracking-widest">
                                                 {trait}
                                             </span>
                                         ))}
                                     </div>
 
                                     <div className="mb-10 flex gap-4 items-center">
-                                        <div className="text-[10px] font-mono text-text-muted/40 tracking-[0.2em] uppercase font-bold">
+                                        <div className="text-[10px] font-accent text-text-muted/40 tracking-[0.2em] uppercase font-bold">
                                             Mood: <span className="text-sage">Resilient</span>
                                         </div>
                                     </div>
 
                                     <button 
                                         onClick={() => navigate(`/chat/${profile.id}`)}
-                                        className="w-full py-5 rounded-[28px] bg-[#2d3748] text-white font-ui font-bold text-sm hover:bg-black transition-all duration-700 shadow-xl shadow-indigo-900/10 flex items-center justify-center gap-3 group"
+                                        className="w-full py-5 rounded-[28px] bg-[#2d3748] text-white font-body font-bold text-sm hover:bg-black transition-all duration-700 shadow-xl shadow-indigo-900/10 flex items-center justify-center gap-3 group"
                                     >
                                         <MessageSquare size={16} className="group-hover:scale-110 transition-transform" />
                                         Start Conversation
@@ -111,7 +111,7 @@ const Matches = () => {
                             </p>
                             <button 
                                 onClick={() => navigate('/match')}
-                                className="px-16 py-6 bg-[#2d3748] text-white rounded-full font-ui font-bold hover:scale-105 transition-all shadow-2xl"
+                                className="px-16 py-6 bg-[#2d3748] text-white rounded-full font-body font-bold hover:scale-105 transition-all shadow-2xl"
                             >
                                 Explorer Orbit
                             </button>
@@ -121,7 +121,7 @@ const Matches = () => {
             </div>
 
             <footer className="mt-20 pt-20 border-t border-[#2d3748]/5 text-center">
-                <p className="font-mono text-[8px] uppercase tracking-[0.4em] text-text-muted/20">
+                <p className="font-accent text-[8px] uppercase tracking-[0.4em] text-text-muted/20">
                     Shared Wisdom · Safe Spaces · Personal Growth
                 </p>
             </footer>

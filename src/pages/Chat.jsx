@@ -34,8 +34,8 @@ const Chat = () => {
             <ArrowLeft size={24} />
           </button>
           <div>
-            <h1 className="font-mono text-xl text-[#2d3748] tracking-widest font-bold uppercase">{id}</h1>
-            <div className="flex items-center gap-2 text-[9px] font-mono text-sage uppercase tracking-widest mt-1 font-bold">
+            <h1 className="font-heading text-xl text-[#2d3748] tracking-widest font-bold uppercase">{id}</h1>
+            <div className="flex items-center gap-2 text-[9px] font-accent text-sage uppercase tracking-widest mt-1 font-bold">
               <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
               Secure Mind-Link
             </div>
@@ -49,7 +49,7 @@ const Chat = () => {
       {/* Shared Space Placeholder */}
       <div className="px-10 py-6 bg-sage/5 border-b border-sage/10 relative z-10 overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 bg-white/20 blur-[60px]" />
-            <p className="font-ui text-[10px] text-sage font-bold tracking-[0.2em] relative z-10 flex items-center gap-3">
+            <p className="font-body text-[10px] text-sage font-bold tracking-[0.2em] relative z-10 flex items-center gap-3">
                 <MessageSquare size={12} />
                 SHARED INTENTION: LISTENING & HOLDING SPACE
             </p>
@@ -66,14 +66,14 @@ const Chat = () => {
               className={`flex ${m.sender === 'me' ? 'justify-end' : 'justify-start'}`}
             >
               <div className={`max-w-[70%] space-y-2`}>
-                <div className={`px-10 py-5 rounded-[32px] font-ui text-sm shadow-2xl ${
+                <div className={`px-10 py-5 rounded-[32px] font-body text-sm shadow-2xl ${
                   m.sender === 'me' 
                     ? 'bg-[#2d3748] text-white shadow-indigo-900/10' 
                     : 'bg-white border border-white/80 text-text-main shadow-indigo-100/30'
                 }`}>
                   {m.text}
                 </div>
-                <div className={`px-4 font-mono text-[8px] tracking-widest text-text-muted/40 uppercase font-bold flex ${m.sender === 'me' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`px-4 font-accent text-[8px] tracking-widest text-text-muted/40 uppercase font-bold flex ${m.sender === 'me' ? 'justify-end' : 'justify-start'}`}>
                   {m.time}
                 </div>
               </div>
@@ -90,7 +90,7 @@ const Chat = () => {
             value={input}
             onChange={e => setInput(e.target.value)}
             placeholder="Share your thoughts safely..."
-            className="w-full bg-white border border-white/80 rounded-[40px] px-12 py-6 font-ui text-sm text-text-main focus:outline-none focus:border-sage/40 transition-all shadow-3xl shadow-indigo-100/40 placeholder:text-text-muted/20"
+            className="w-full bg-white border border-white/80 rounded-[40px] px-12 py-6 font-body text-sm text-text-main focus:outline-none focus:border-sage/40 transition-all shadow-3xl shadow-indigo-100/40 placeholder:text-text-muted/20"
           />
           <button 
             type="submit"
@@ -100,7 +100,7 @@ const Chat = () => {
           </button>
         </form>
         <div className="max-w-4xl mx-auto mt-6 text-center">
-            <span className="font-mono text-[8px] tracking-[0.4em] text-text-muted/30 uppercase">Messages are encrypted and ephemeral</span>
+            <span className="font-accent text-[8px] tracking-[0.4em] text-text-muted/30 uppercase">Messages are encrypted and ephemeral</span>
         </div>
       </div>
     </div>

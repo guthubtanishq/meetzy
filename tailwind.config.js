@@ -19,9 +19,11 @@ export default {
         'sky': '#a0c4ff',
       },
       fontFamily: {
-        heading: ['"DM Serif Display"', 'serif'],
-        ui: ['Syne', 'sans-serif'],
-        mono: ['"DM Mono"', 'monospace'],
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        ui: ['Inter', 'sans-serif'],
+        accent: ['Nunito', 'sans-serif'],
+        mono: ['Nunito', 'monospace'],
       },
       backgroundImage: {
         'gradient-calm': 'linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%)',

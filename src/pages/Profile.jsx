@@ -27,10 +27,10 @@ const Profile = () => {
             <div className="absolute inset-0 bg-sage rounded-[60px] opacity-10 blur-[80px] animate-pulse" />
           </div>
 
-          <h1 className="font-mono text-5xl text-[#2d3748] mb-6 tracking-tighter text-glow-sage">{anonymousId || 'CalmTide12'}</h1>
+          <h1 className="font-heading text-5xl text-[#2d3748] mb-6 tracking-tighter text-glow-sage uppercase">{anonymousId || 'CalmTide12'}</h1>
           <button 
             onClick={handleRegenerate}
-            className="text-[10px] font-mono uppercase tracking-[0.4em] text-text-muted hover:text-sage font-bold transition-all px-8 py-3 border border-sage/10 rounded-full hover:bg-sage/5"
+            className="text-[10px] font-accent uppercase tracking-[0.4em] text-text-muted hover:text-sage font-bold transition-all px-8 py-3 border border-sage/10 rounded-full hover:bg-sage/5"
           >
             Regenerate Identity
           </button>
@@ -46,16 +46,16 @@ const Profile = () => {
             <h3 className="font-heading text-2xl mb-8 text-[#2d3748]">Current Experience</h3>
             <div className="flex flex-wrap gap-4 justify-center">
               {traits.map(trait => (
-                <span key={trait} className="px-8 py-3 rounded-2xl border border-[#2d3748]/5 bg-[#2d3748]/5 text-xs font-mono font-bold uppercase tracking-widest text-[#2d3748]/60 hover:bg-sage/10 hover:text-sage transition-all cursor-default">
+                <span key={trait} className="px-8 py-3 rounded-2xl border border-[#2d3748]/5 bg-[#2d3748]/5 text-xs font-accent font-bold uppercase tracking-widest text-[#2d3748]/60 hover:bg-sage/10 hover:text-sage transition-all cursor-default">
                   {trait}
                 </span>
               ))}
-              {traits.length === 0 && <span className="opacity-20 italic font-ui">No traits selected</span>}
+              {traits.length === 0 && <span className="opacity-20 italic font-body">No traits selected</span>}
             </div>
             
             <div className="mt-12 pt-12 border-t border-[#2d3748]/5">
                 <h4 className="font-heading text-xl mb-4 text-[#2d3748]/80">Interaction Mode</h4>
-                <div className="inline-block px-10 py-4 rounded-3xl bg-sage/10 border border-sage/20 text-sage font-ui font-bold shadow-lg shadow-sage/10 capitalize">
+                <div className="inline-block px-10 py-4 rounded-3xl bg-sage/10 border border-sage/20 text-sage font-body font-bold shadow-lg shadow-sage/10 capitalize">
                 {supportPreference}
                 </div>
             </div>
@@ -63,7 +63,7 @@ const Profile = () => {
 
           <section className="p-12 border border-[#2d3748]/5 rounded-[50px] bg-white/40">
             <h3 className="font-heading text-2xl mb-8 text-[#2d3748] opacity-60">Private Information</h3>
-            <div className="flex justify-center gap-20 font-mono text-[11px] uppercase tracking-widest text-text-muted">
+            <div className="flex justify-center gap-20 font-accent text-[11px] uppercase tracking-widest text-text-muted">
                 <div className="flex flex-col gap-3">
                     <span className="opacity-50">Age</span>
                     <span className="text-[#2d3748] font-bold text-lg">{age || '--'}</span>
@@ -76,7 +76,7 @@ const Profile = () => {
           </section>
 
           <footer className="pt-20">
-            <p className="font-mono text-[9px] uppercase tracking-[0.5em] text-text-muted/30 leading-relaxed max-w-sm mx-auto">
+            <p className="font-accent text-[9px] uppercase tracking-[0.5em] text-text-muted/30 leading-relaxed max-w-sm mx-auto">
               Safe Space · Decentralized · Private <br />
               All data stored locally on your device.
             </p>

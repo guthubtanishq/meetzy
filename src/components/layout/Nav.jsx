@@ -20,25 +20,25 @@ const Nav = () => {
       <div className="flex gap-10 items-center">
         <Link 
           to="/match" 
-          className={`font-ui text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/match' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
+          className={`font-body text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/match' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
         >
           Orbit
         </Link>
         <Link 
           to="/journal" 
-          className={`font-ui text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/journal' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
+          className={`font-body text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/journal' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
         >
           Journal
         </Link>
         <Link 
           to="/matches" 
-          className={`font-ui text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/matches' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
+          className={`font-body text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/matches' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
         >
           Matches
         </Link>
         <Link 
           to="/profile" 
-          className={`font-ui text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/profile' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
+          className={`font-body text-[11px] uppercase tracking-[0.3em] transition-all font-semibold ${location.pathname === '/profile' ? 'text-sage' : 'text-text-muted hover:text-text-main'}`}
         >
           {anonymousId || 'Profile'}
         </Link>

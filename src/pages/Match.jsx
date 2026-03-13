@@ -45,10 +45,10 @@ const SwipeCard = ({ profile, i, onSwipe, active }) => {
                 {/* Card Content */}
                 <div className="flex justify-between items-start mb-12">
                     <div>
-                        <span className="font-mono text-[10px] tracking-[0.3em] text-sage font-bold uppercase py-2 px-5 bg-sage/5 rounded-2xl">
+                        <span className="font-accent text-[10px] tracking-[0.3em] text-sage font-bold uppercase py-2 px-5 bg-sage/5 rounded-2xl">
                             {profile.id}
                         </span>
-                        <div className="flex items-center gap-3 mt-6 text-[10px] font-mono text-text-muted/40 tracking-[0.2em] uppercase font-bold">
+                        <div className="flex items-center gap-3 mt-6 text-[10px] font-accent text-text-muted/40 tracking-[0.2em] uppercase font-bold">
                             <div className={`w-2 h-2 rounded-full ${profile.preference === 'Listener' ? 'bg-sage' : 'bg-lavender'} animate-pulse`} />
                             {profile.preference}
                         </div>
@@ -65,14 +65,14 @@ const SwipeCard = ({ profile, i, onSwipe, active }) => {
                     <h3 className="font-heading text-2xl text-[#2d3748] mb-8 opacity-40">Experiences & Traits</h3>
                     <div className="flex flex-wrap gap-3 mb-12">
                         {profile.traits.map(trait => (
-                            <span key={trait} className="px-5 py-3 bg-white/60 border border-white rounded-2xl text-[10px] font-mono text-text-muted font-bold uppercase tracking-widest shadow-sm">
+                            <span key={trait} className="px-5 py-3 bg-white/60 border border-white rounded-2xl text-[10px] font-accent text-text-muted font-bold uppercase tracking-widest shadow-sm">
                                 {trait}
                             </span>
                         ))}
                     </div>
 
                     <div className="border-l-2 border-sage/20 pl-8 py-4 mb-12">
-                         <p className="font-ui text-lg text-[#2d3748]/80 italic leading-relaxed">
+                         <p className="font-body text-lg text-[#2d3748]/80 italic leading-relaxed">
                             "{profile.reason}"
                         </p>
                     </div>
@@ -80,8 +80,8 @@ const SwipeCard = ({ profile, i, onSwipe, active }) => {
 
                 <div className="pt-10 border-t border-[#2d3748]/5 flex justify-between items-center">
                     <div className="flex flex-col gap-1">
-                        <span className="font-mono text-[8px] uppercase tracking-widest text-text-muted/30">Current Mood</span>
-                        <span className="font-ui text-xs font-bold text-sage">Resilient & Open</span>
+                        <span className="font-accent text-[8px] uppercase tracking-widest text-text-muted/30">Current Mood</span>
+                        <span className="font-body text-xs font-bold text-sage">Resilient & Open</span>
                     </div>
                     <div className="flex gap-4">
                         <button className="w-12 h-12 rounded-full border border-[#2d3748]/5 flex items-center justify-center text-text-muted/30 hover:text-text-main transition-colors">
@@ -132,7 +132,7 @@ const Match = () => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="inline-block font-mono text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
+                    className="inline-block font-accent text-[9px] uppercase tracking-[0.5em] text-sage/60 py-2 border-b border-sage/10 mb-8"
                 >
                     Soul Alignment
                 </motion.div>
@@ -154,7 +154,7 @@ const Match = () => {
                         >
                             <div className="w-16 h-16 border-4 border-sage/10 border-t-sage rounded-full animate-spin mb-8" />
                             <h3 className="font-heading text-2xl text-[#2d3748] mb-4">Searching local orbit...</h3>
-                            <p className="text-text-muted text-xs tracking-widest uppercase font-mono px-8">Connecting with compatible souls</p>
+                            <p className="text-text-muted text-xs tracking-widest uppercase font-accent px-8">Connecting with compatible souls</p>
                         </motion.div>
                     ) : currentIndex < profiles.length ? (
                         <>
@@ -192,7 +192,7 @@ const Match = () => {
                             </p>
                             <button 
                                 onClick={() => setCurrentIndex(0)}
-                                className="px-12 py-4 border border-sage/20 text-sage font-ui font-bold rounded-full hover:bg-sage/5 transition-all outline-none"
+                                className="px-12 py-4 border border-sage/20 text-sage font-body font-bold rounded-full hover:bg-sage/5 transition-all outline-none"
                             >
                                 Refresh Orbit
                             </button>
@@ -247,13 +247,13 @@ const Match = () => {
                             <div className="flex flex-col gap-4">
                                 <button 
                                     onClick={() => navigate(`/chat/${matchedProfile.id}`)}
-                                    className="w-full py-6 bg-[#2d3748] text-white rounded-[32px] font-ui font-bold shadow-2xl hover:bg-black transition-all"
+                                    className="w-full py-6 bg-[#2d3748] text-white rounded-[32px] font-body font-bold shadow-2xl hover:bg-black transition-all"
                                 >
                                     Start Conversation
                                 </button>
                                 <button 
                                     onClick={() => setShowMatchPopup(false)}
-                                    className="w-full py-6 border border-[#2d3748]/5 text-text-muted rounded-[32px] font-ui font-bold hover:bg-bg-base transition-all"
+                                    className="w-full py-6 border border-[#2d3748]/5 text-text-muted rounded-[32px] font-body font-bold hover:bg-bg-base transition-all"
                                 >
                                     Maybe Later
                                 </button>
@@ -263,7 +263,7 @@ const Match = () => {
                 )}
             </AnimatePresence>
 
-            <footer className="mt-auto pt-16 font-mono text-[8px] uppercase tracking-[0.4em] text-text-muted/30 relative z-10 pointer-events-none">
+            <footer className="mt-auto pt-16 font-accent text-[8px] uppercase tracking-[0.4em] text-text-muted/30 relative z-10 pointer-events-none">
                 Safety First · No Judgment · Peer Support
             </footer>
         </div>

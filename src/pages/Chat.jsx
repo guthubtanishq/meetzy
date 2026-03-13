@@ -2,25 +2,70 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, ArrowLeft, Info, MessageSquare } from 'lucide-react';
+import useUserStore from '../store/userStore';
+import { mockProfiles } from '../data/mockProfiles';
+import { generateAIResponse } from '../utils/aiEngine';
 
 const Chat = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { currentMood } = useUserStore();
+  const [isTyping, setIsTyping] = useState(false);
+  const scrollRef = useRef();
+
+  const botProfile = mockProfiles.find(p => p.id === id && p.isAI);
+
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello. I also struggle with overthinking. How are you feeling today?", sender: "other", time: "12:01 PM" }
+    { 
+      id: 1, 
+      text: botProfile 
+        ? `Hello. I resonance with your energy. How are you feeling today?` 
+        : "Hello. I also struggle with overthinking. How are you feeling today?", 
+      sender: "other", 
+      time: "Just now" 
+    }
   ]);
   const [input, setInput] = useState("");
-  const scrollRef = useRef();
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [messages, isTyping]);
 
   const handleSend = (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
-    setMessages([...messages, { id: Date.now(), text: input, sender: 'me', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }]);
+    if (!input.trim() || isTyping) return;
+
+    const userMessage = input.trim();
+    const newMsg = { 
+      id: Date.now(), 
+      text: userMessage, 
+      sender: 'me', 
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) 
+    };
+
+    setMessages(prev => [...prev, newMsg]);
     setInput("");
+
+    // AI logic
+    if (botProfile) {
+      const typingTime = 1500 + Math.random() * 2000;
+      
+      setTimeout(() => {
+        setIsTyping(true);
+        
+        setTimeout(() => {
+          const aiText = generateAIResponse(botProfile.id, userMessage, currentMood);
+          const aiMsg = {
+            id: Date.now(),
+            text: aiText,
+            sender: 'other',
+            time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+          };
+          setMessages(prev => [...prev, aiMsg]);
+          setIsTyping(false);
+        }, 1000 + Math.random() * 1500);
+      }, 500);
+    }
   };
 
   return (
@@ -36,8 +81,8 @@ const Chat = () => {
           <div>
             <h1 className="font-heading text-xl text-[#2d3748] tracking-widest font-bold uppercase">{id}</h1>
             <div className="flex items-center gap-2 text-[9px] font-accent text-sage uppercase tracking-widest mt-1 font-bold">
-              <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-              Secure Mind-Link
+              <span className={`w-2 h-2 rounded-full ${isTyping ? 'bg-sage animate-ping' : 'bg-sage animate-pulse'}`} />
+              {isTyping ? "Attuning to your energy..." : "Secure Mind-Link"}
             </div>
           </div>
         </div>
@@ -51,7 +96,7 @@ const Chat = () => {
             <div className="absolute inset-0 bg-white/20 blur-[60px]" />
             <p className="font-body text-[10px] text-sage font-bold tracking-[0.2em] relative z-10 flex items-center gap-3">
                 <MessageSquare size={12} />
-                SHARED INTENTION: LISTENING & HOLDING SPACE
+                SHARED INTENTION: {botProfile ? "RESONANCE & EMPATHY" : "LISTENING & HOLDING SPACE"}
             </p>
       </div>
 
@@ -65,7 +110,7 @@ const Chat = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               className={`flex ${m.sender === 'me' ? 'justify-end' : 'justify-start'}`}
             >
-              <div className={`max-w-[70%] space-y-2`}>
+              <div className="max-w-[70%] space-y-2">
                 <div className={`px-10 py-5 rounded-[32px] font-body text-sm shadow-2xl ${
                   m.sender === 'me' 
                     ? 'bg-[#2d3748] text-white shadow-indigo-900/10' 
@@ -79,6 +124,19 @@ const Chat = () => {
               </div>
             </motion.div>
           ))}
+          {isTyping && (
+            <motion.div 
+               initial={{ opacity: 0, y: 10 }}
+               animate={{ opacity: 1, y: 0 }}
+               className="flex justify-start"
+            >
+               <div className="bg-white/40 border border-white/80 px-8 py-4 rounded-full flex gap-2 items-center">
+                  <div className="w-1.5 h-1.5 bg-sage rounded-full animate-bounce [animation-delay:-0.3s]" />
+                  <div className="w-1.5 h-1.5 bg-sage rounded-full animate-bounce [animation-delay:-0.15s]" />
+                  <div className="w-1.5 h-1.5 bg-sage rounded-full animate-bounce" />
+               </div>
+            </motion.div>
+          )}
         </AnimatePresence>
         <div ref={scrollRef} />
       </div>
@@ -89,12 +147,14 @@ const Chat = () => {
           <input 
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="Share your thoughts safely..."
-            className="w-full bg-white border border-white/80 rounded-[40px] px-12 py-6 font-body text-sm text-text-main focus:outline-none focus:border-sage/40 transition-all shadow-3xl shadow-indigo-100/40 placeholder:text-text-muted/20"
+            disabled={isTyping}
+            placeholder={isTyping ? "Awaiting resonance..." : "Share your thoughts safely..."}
+            className="w-full bg-white border border-white/80 rounded-[40px] px-12 py-6 font-body text-sm text-text-main focus:outline-none focus:border-sage/40 transition-all shadow-3xl shadow-indigo-100/40 placeholder:text-text-muted/20 disabled:opacity-50"
           />
           <button 
             type="submit"
-            className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#2d3748] text-white rounded-full flex items-center justify-center hover:scale-105 transition-all shadow-xl shadow-indigo-900/20"
+            disabled={isTyping || !input.trim()}
+            className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#2d3748] text-white rounded-full flex items-center justify-center hover:scale-105 transition-all shadow-xl shadow-indigo-900/20 disabled:scale-95 disabled:opacity-20"
           >
             <Send size={18} />
           </button>

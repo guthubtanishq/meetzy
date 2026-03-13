@@ -114,8 +114,9 @@ const Match = () => {
 
     const handleSwipe = (direction, profile) => {
         if (direction === 'right') {
-            // Simulate a match logic (50% chance for demo)
-            if (Math.random() > 0.5) {
+            const isMatch = profile.isAI ? true : Math.random() > 0.5;
+            
+            if (isMatch) {
                 addMatch(profile);
                 setMatchedProfile(profile);
                 setShowMatchPopup(true);

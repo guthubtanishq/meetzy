@@ -17,53 +17,44 @@ export const compatibilityMap = {
 
 export const mockProfiles = [
   {
-    id: "QuietOrbit72",
+    id: "QuietOrbit",
     traits: ["Introvert", "Patient Listener"],
     preference: "Listener",
-    moodId: 1,
-    reason: "They tend to listen without judgment."
+    moodId: 0,
+    reason: "A calm presence that prefers to listen and understand.",
+    isAI: true
   },
   {
-    id: "BlueMind23",
-    traits: ["Overthinker", "Vivid Dreamer"],
+    id: "BlueSoul",
+    traits: ["Empath", "Emotionally Expressive"],
     preference: "Talker",
     moodId: 2,
-    reason: "Deep reflections matching your active mind."
+    reason: "Looking for deep emotional resonance and shared feelings.",
+    isAI: true
   },
   {
-    id: "CalmTide9",
-    traits: ["Calm Personality", "Emotionally Stable"],
+    id: "SilentWave",
+    traits: ["High Sensitivity", "Reflective"],
     preference: "Mixed",
-    moodId: 0,
-    reason: "A grounding presence for intense days."
-  },
-  {
-    id: "SilverEcho44",
-    traits: ["Social Anxiety", "Empathetic"],
-    preference: "Listener",
-    moodId: 3,
-    reason: "Finding comfort in shared sensitivity."
-  },
-  {
-    id: "LunarSpirit11",
-    traits: ["High Sensitivity", "Creative Soul"],
-    preference: "Mixed",
-    moodId: 4,
-    reason: "Resonates with your emotional depth."
-  },
-  {
-    id: "SoftPulse5",
-    traits: ["ADHD", "Energetic Mind"],
-    preference: "Talker",
     moodId: 1,
-    reason: "Shared focus and dynamic energy."
+    reason: "Thoughtful and reflective, finding meaning in small moments.",
+    isAI: true
   },
   {
-    id: "OpenHorizon33",
-    traits: ["Structured", "Clear Path"],
+    id: "CalmMind21",
+    traits: ["Structured", "Rational Support"],
     preference: "Listener",
     moodId: 0,
-    reason: "Offering clarity and gentle structure."
+    reason: "Offering a supportive and rational perspective on life.",
+    isAI: true
+  },
+  {
+    id: "EchoThinker",
+    traits: ["Overthinker", "Vivid Dreamer"],
+    preference: "Mixed",
+    moodId: 3,
+    reason: "Diving deep into thoughts and exploring the 'what ifs'.",
+    isAI: true
   },
   {
     id: "StillWater88",
@@ -71,6 +62,13 @@ export const mockProfiles = [
     preference: "Mixed",
     moodId: 2,
     reason: "Comfortable silences and deep insights."
+  },
+  {
+    id: "SoftPulse5",
+    traits: ["ADHD", "Energetic Mind"],
+    preference: "Talker",
+    moodId: 1,
+    reason: "Shared focus and dynamic energy."
   }
 ];
 

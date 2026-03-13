@@ -18,6 +18,7 @@ const useUserStore = create(
       currentMood: "Calm",
       note: "",
       isOnboarded: false,
+      matches: [],
 
       // Actions
       setPrivateInfo: (data) => set((state) => ({ ...state, ...data })),
@@ -26,6 +27,11 @@ const useUserStore = create(
       setAnonymousId: (id) => set({ anonymousId: id }),
       setMood: (mood) => set({ currentMood: mood }),
       setSupport: (pref) => set({ supportPreference: pref }),
+      addMatch: (profile) => set((state) => ({ 
+        matches: state.matches.find(m => m.id === profile.id) 
+          ? state.matches 
+          : [...state.matches, profile] 
+      })),
       reset: () => set({
         realName: "",
         age: null,

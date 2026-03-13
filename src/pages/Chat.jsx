@@ -30,14 +30,14 @@ const Chat = () => {
       {/* Header */}
       <div className="px-10 py-8 border-b border-white/60 bg-white/40 backdrop-blur-3xl flex justify-between items-center relative z-10">
         <div className="flex items-center gap-6">
-          <button onClick={() => navigate('/match')} className="text-text-muted hover:text-text-main transition-colors">
+          <button onClick={() => navigate('/matches')} className="text-text-muted hover:text-text-main transition-colors">
             <ArrowLeft size={24} />
           </button>
           <div>
-            <h1 className="font-mono text-xl text-[#2d3748] tracking-widest font-bold">{id}</h1>
-            <div className="flex items-center gap-2 text-[9px] font-mono text-sage uppercase tracking-widest mt-1">
+            <h1 className="font-mono text-xl text-[#2d3748] tracking-widest font-bold uppercase">{id}</h1>
+            <div className="flex items-center gap-2 text-[9px] font-mono text-sage uppercase tracking-widest mt-1 font-bold">
               <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-              Mind Connected
+              Secure Mind-Link
             </div>
           </div>
         </div>

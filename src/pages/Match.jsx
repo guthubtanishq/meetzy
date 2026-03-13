@@ -95,6 +95,7 @@ const SwipeCard = ({ profile, i, onSwipe, active }) => {
 
 const Match = () => {
     const navigate = useNavigate();
+    const { addMatch } = useUserStore();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [profiles, setProfiles] = useState(mockProfiles);
     const [showMatchPopup, setShowMatchPopup] = useState(false);
@@ -104,6 +105,7 @@ const Match = () => {
         if (direction === 'right') {
             // Simulate a match logic (50% chance for demo)
             if (Math.random() > 0.5) {
+                addMatch(profile);
                 setMatchedProfile(profile);
                 setShowMatchPopup(true);
             }

@@ -120,6 +120,16 @@ const SignUp = () => {
               Continue 
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
+
+            <div className="text-center space-y-4 pt-2">
+              <button 
+                type="button"
+                onClick={() => navigate('/login')}
+                className="font-body text-xs text-text-muted hover:text-text-main transition-colors"
+              >
+                Already have an account? <span className="font-bold text-sage">Log in</span>
+              </button>
+            </div>
           </motion.div>
         </form>
       </div>

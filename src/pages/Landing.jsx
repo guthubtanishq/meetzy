@@ -6,7 +6,6 @@ import { ChevronDown, Heart, X, MessageSquare } from 'lucide-react';
 import ParticleField from '../components/three/ParticleField';
 import MoodOrb from '../components/three/MoodOrb';
 import useUserStore from '../store/userStore';
-import SignUpModal from '../components/auth/SignUpModal';
 import WorkflowAnimation from '../components/layout/WorkflowAnimation';
 
 
@@ -34,7 +33,6 @@ const FloatingAvatar = ({ delay = 0, x = 0, y = 0, color = "#9b8ec4" }) => (
 
 const Landing = () => {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
   const { isAuthenticated, isOnboarded, logout } = useUserStore();
 
   useEffect(() => {
@@ -92,7 +90,7 @@ const Landing = () => {
         >
           {!isAuthenticated ? (
             <button 
-              onClick={() => setShowModal(true)}
+              onClick={() => navigate('/signup')}
               className="px-8 py-4 bg-white/40 backdrop-blur-md border border-white/60 rounded-full text-[11px] font-bold uppercase tracking-[0.3em] text-[#2d3748] hover:bg-white/80 transition-all shadow-lg"
             >
               Sign Up
@@ -148,7 +146,7 @@ const Landing = () => {
                className="flex flex-col items-center lg:items-start gap-10"
             >
                 <button 
-                  onClick={() => setShowModal(true)}
+                  onClick={() => navigate('/signup')}
                   className="group relative px-20 py-7 bg-[#2d3748] text-white rounded-full font-body font-bold text-sm tracking-widest overflow-hidden hover:scale-105 transition-all duration-700 shadow-3xl shadow-indigo-900/30"
                 >
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
@@ -185,12 +183,6 @@ const Landing = () => {
             <ChevronDown size={24} />
           </motion.div>
       </motion.div>
-
-      <SignUpModal 
-        isOpen={showModal} 
-        onClose={() => setShowModal(false)} 
-        onComplete={() => navigate('/onboarding')} 
-      />
     </div>
   );
 };

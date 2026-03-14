@@ -32,7 +32,7 @@ const Register = () => {
     }
   }, []);
 
-  const handleContinue = (e) => {
+  const handleContinue = async (e) => {
     e.preventDefault();
     if (localState.password !== localState.confirmPassword) {
       alert("Passwords do not match");
@@ -42,11 +42,25 @@ const Register = () => {
     // Save generated/provided alias locally
     localStorage.setItem("userAlias", localState.alias);
     
-    // Log the user in to app state
-    login({ ...localState, realName: localState.alias });
-    
-    // Redirect to matching page
-    navigate('/match');
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ alias: localState.alias, password: localState.password })
+      });
+      const data = await res.json();
+      
+      if (data.success) {
+        // Log the user in to app state
+        login({ ...localState, realName: localState.alias });
+        // Redirect to matching page
+        navigate('/match');
+      }
+    } catch (err) {
+      // Fallback: If backend is not available, proceed with mock logic
+      login({ ...localState, realName: localState.alias });
+      navigate('/match');
+    }
   };
 
   return (
